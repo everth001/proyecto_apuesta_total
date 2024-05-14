@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('especialidad', function (Blueprint $table) {
+        Schema::create('recarga_manuales', function (Blueprint $table) {
             $table->id();
-            $table->string('nespecialidad')->nullable();
-            $table->boolean('condicion')->default(1);
-            $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+            $table->integer('cliente_id');
+            $table->string('canal_id');
+            $table->string('tipo_moneda_id');
+            $table->boolean('monto');
+            $table->string('voucher');
+            $table->timestamps();
         });
     }
 
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('especialidad');
+        Schema::dropIfExists('recarga_manuales');
     }
 };

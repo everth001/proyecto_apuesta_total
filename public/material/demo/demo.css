@@ -5,6 +5,10 @@
   width: 100%;
 }
 
+.dataTables_filter {
+  float: right;
+}
+
 .tim-typo .tim-note {
   bottom: 5px;
   color: #c0c1c2;
